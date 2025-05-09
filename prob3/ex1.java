@@ -9,10 +9,10 @@ public class ex1 {
         BlockingQueue<String> queue = new ArrayBlockingQueue<>(3); //cap = 3
 
         Producer producer = new Producer(queue);
-        Consumer consumer = new Consumer(queue);
+        User User = new User(queue);
 
         producer.start();
-        consumer.start();
+        User.start();
     }
 
 }
@@ -41,10 +41,10 @@ class Producer extends Thread {
     }
 }
 
-class Consumer extends Thread {
+class User extends Thread {
     private BlockingQueue<String> queue;
 
-    public Consumer(BlockingQueue<String> queue) {
+    public User(BlockingQueue<String> queue) {
         this.queue = queue;
     }
 
